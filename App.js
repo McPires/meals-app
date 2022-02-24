@@ -10,14 +10,14 @@ import MealsNavigator from "./navigation/MealsNavigator";
 
 enableScreens();
 
-const fetchFonts = () => {
-  return Font.loadAsync({
+const fetchFonts = async () => {
+  await Font.loadAsync({
     "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 };
 
-export default function App() {
+const App = () => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   if (!fontLoaded) {
@@ -31,4 +31,6 @@ export default function App() {
   }
 
   return <MealsNavigator />;
-}
+};
+
+export default App;
